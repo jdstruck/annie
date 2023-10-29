@@ -1,7 +1,7 @@
 import requests
 
-def affirmation(mood):
-    pass
+def affirmation(mood, name):
+    print("you look very nice today " + name )
 
 def joke(mood):
     limit = 1
@@ -12,9 +12,10 @@ def joke(mood):
     else:
         print("Error:", response.status_code, response.text)
 
-def cheer_up(mood):
-	print('I will cheer up your ' + mood + 'ness')
-	joke(mood)
+def cheer_up(mood, name):
+    print('I will cheer up your ' + mood + 'ness')
+    joke(mood)
+    affirmation(mood, name)
 
 name = input('what is your name: ')
 age=input('what is your age ')
@@ -30,12 +31,12 @@ while True:
 		print( 'sorry to hear that ' )
 		# TODO: if mood =bad or so-so cheer user up 
 		#      cheer user up by printing positive affirmations
-		cheer_up(mood)
+		cheer_up(mood, name)
 		break
 	elif mood == 'so-so':
 		fine=input ( 'why are you feeling ' + mood + '?:' )
 		print( 'I now understand ')
-		cheer_up(mood)
+		cheer_up(mood, name)
 		break
 	else: 
 		print('please,use good,bad or so-so')
