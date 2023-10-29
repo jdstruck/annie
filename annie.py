@@ -18,8 +18,8 @@ def cheer_up(mood, name):
     affirmation(mood, name)
 
 name = input('what is your name: ')
-age=input('what is your age ')
-print('Hello, ' + age + ' year old ' + name )
+# age=input('what is your age ')
+print('Hello, ' + name)
 while True:
 	mood = input(name + ' how are you doing, good, bad, or so-so?: ')
 	if mood == 'good':
