@@ -28,10 +28,8 @@ def cheer_up(mood, name):
     joke(mood)
     affirmation(mood, name)
 
-def main():
+if __name__ == "__main__":
     name = input('what is your name: ')
-    # age=input('what is your age ')
-    # print('Hello, ' + name )
     while True:
         mood = input('hello ' + name + ' how are you doing, good, bad, or so-so?: ')
         if mood == 'good':
@@ -41,8 +39,6 @@ def main():
         elif mood == 'bad':
             fine=input ( 'why are you feeling ' + mood + '?:' )	
             print( 'sorry to hear that ' )
-            # TODO: if mood =bad or so-so cheer user up 
-            #      cheer user up by printing positive affirmations
             cheer_up(mood, name)
             break
         elif mood == 'so-so':
@@ -53,5 +49,4 @@ def main():
         else: 
             print('please,use good,bad or so-so')
 
-main()
 
