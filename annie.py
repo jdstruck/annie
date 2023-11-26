@@ -1,5 +1,26 @@
 import requests
 import random
+import json
+
+moods = """
+{
+    "moods": [
+        {"mood": "excited", "rating": 75},
+        {"mood": "happy", "rating": 60},
+        {"mood": "so-so", "rating": 50},
+        {"mood": "sad", "rating": 30},
+        {"mood": "miserable", "rating": 0},
+        {"mood": "angry", "rating": 10}
+    ]
+}
+"""
+
+data = json.loads(moods)
+
+#print(data["moods"])
+#for mood in data["moods"]:
+#    print(mood["mood"])
+# print(json.dumps(moods, indent=4, sort_keys=True))
 
 def affirmation(mood, name):
     affirmations= [
@@ -31,22 +52,27 @@ def cheer_up(mood, name):
 if __name__ == "__main__":
     name = input('what is your name: ')
     while True:
-        mood = input('hello ' + name + ' how are you doing, good, bad, or so-so?: ')
-        if mood == 'good':
-            fine=input ( 'why are you feeling ' + mood + '?:' )		
+        mood = input('hello ' + name + ' how are you doing, happy, excited, bad, so-so or angry?: ')
+        fine=input ( 'why are you feeling ' + mood + '?:' )		
+        if mood == 'happy' or mood == 'excited':
             print( ' that is great')
             break
         elif mood == 'bad':
-            fine=input ( 'why are you feeling ' + mood + '?:' )	
+            #fine=input ( 'why are you feeling ' + mood + '?:' )	
             print( 'sorry to hear that ' )
             cheer_up(mood, name)
             break
         elif mood == 'so-so':
-            fine=input ( 'why are you feeling ' + mood + '?:' )
+            #fine=input ( 'why are you feeling ' + mood + '?:' )
             print( 'I now understand ')
             cheer_up(mood, name)
             break
+        elif mood == 'angry':
+            #fine = input ( ' why are you feeling '+ mood + '?:')
+            print( 'touch each finger to your thomb while taking deep breaths ')
+            cheer_up(mood,name)
+            break
         else: 
-            print('please,use good,bad or so-so')
+            print('please,use happy, excited, bad, so-so or angry')
 
 
