@@ -28,6 +28,14 @@ for race in range(100):
     for turtle in turtles:
         turtle.fd(random.randint(0,30))
     
+maxTurt = annie
+for turtle in turtles:
+    maxx,maxy = maxTurt.pos()
+    x,y=turtle.pos()
+    print(x)
+    if x>maxx:
+        maxTurt=turtle
+maxTurt.lt(360*3)
 
 
 screen.exitonclick()
