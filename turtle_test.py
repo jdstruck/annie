@@ -1,21 +1,17 @@
 import turtle
 turtle.shape("turtle")
-turtle.width(10)
+turtle.width(15)
+turtle.shapesize(17)
+screen = turtle.Screen()
 
 length = 400
+angle = 90
 
-turtle.color('purple')
-turtle.fd(length)
-turtle.rt(90)
+colors = ['purple', 'yellow','green','blue']
 
-turtle.color('yellow')
-turtle.fd(length)
-turtle.rt(90)
+for color in colors:
+    turtle.color(color)
+    turtle.fd(length)
+    turtle.rt(angle)
 
-turtle.color('blue')
-turtle.fd(length)
-turtle.rt(90)
-
-turtle.color('green')
-turtle.fd(length)
-turtle.rt(90)
+screen.exitonclick()

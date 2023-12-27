@@ -6,11 +6,11 @@ screen = turtle.Screen()
 
 import random
 annie=turtle.Turtle()
-annie.color('medium slate blue')
+annie.color('RoyalBlue2')
 lucy=turtle.Turtle()
-lucy.color('cyan')
+lucy.color('violet')
 clara=turtle.Turtle()
-clara.color('deep pink')
+clara.color('VioletRed3')
 
 turtles = [annie,lucy,clara]
 
@@ -28,14 +28,14 @@ for race in range(100):
     for turtle in turtles:
         turtle.fd(random.randint(0,30))
     
-maxTurt = annie
+maxTurt = clara
 for turtle in turtles:
     maxx,maxy = maxTurt.pos()
     x,y=turtle.pos()
     print(x)
     if x>maxx:
         maxTurt=turtle
-maxTurt.lt(360*3)
+maxTurt.lt(360*5)
 
 
 screen.exitonclick()

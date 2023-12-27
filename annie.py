@@ -45,7 +45,8 @@ def joke(mood):
         print("Error:", response.status_code, response.text)
 
 def cheer_up(mood, name):
-    print('I will cheer up your ' + mood + 'ness')
+    if mood != 'happy' and mood != 'exited':
+        print('I will cheer up your ' + mood + 'ness')
     joke(mood)
     affirmation(mood, name)
 
@@ -53,22 +54,24 @@ if __name__ == "__main__":
     name = input('what is your name: ')
     while True:
         mood = input('hello ' + name + ' how are you doing, happy, excited, bad, so-so or angry?: ')
-        fine=input ( 'why are you feeling ' + mood + '?:' )		
         if mood == 'happy' or mood == 'excited':
-            print( ' that is great')
+            fine=input ( 'why are you feeling ' + mood + '?:' )		
+            print( ' that is great.')
+            cheer_up(mood,name)
+            
             break
         elif mood == 'bad':
-            #fine=input ( 'why are you feeling ' + mood + '?:' )	
+            fine=input ( 'why are you feeling ' + mood + '?:' )	
             print( 'sorry to hear that ' )
             cheer_up(mood, name)
             break
         elif mood == 'so-so':
-            #fine=input ( 'why are you feeling ' + mood + '?:' )
+            fine=input ( 'why are you feeling ' + mood + '?:' )
             print( 'I now understand ')
             cheer_up(mood, name)
             break
         elif mood == 'angry':
-            #fine = input ( ' why are you feeling '+ mood + '?:')
+            fine = input ( ' why are you feeling '+ mood + '?:')
             print( 'touch each finger to your thomb while taking deep breaths ')
             cheer_up(mood,name)
             break
